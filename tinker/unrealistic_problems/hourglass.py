@@ -8,8 +8,6 @@ def get_hourglass_sum_at_idx(idx, firstList, oneAheadList, twoAheadList):
     oneAheadListSum = oneAheadList[idx+1]
     return firstListSum + thirdListSum + oneAheadListSum
 
-
-
 def hourglass(twoDimensionalList):
     maxHourGlassableNumberIndex = len(twoDimensionalList[0]) - 2
     maxHourGlassableListIndex = len(twoDimensionalList) - 2
