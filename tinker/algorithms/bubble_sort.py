@@ -1,12 +1,13 @@
 def bubble_sort(aList):
-    for i in range(len(aList)):
+    for idx, element in enumerate(aList):
         swapped = False
-        index = 0
-        while index < len(aList)-1:
-            if aList[index] > aList[index+1]:
-                aList[index], aList[index+1] = aList[index+1], aList[index]
+        start = idx + 1
+        while start < len(aList):
+            next_element = aList[start]
+            if element > next_element:
+                aList[idx], aList[start] = aList[start], aList[idx]
                 swapped = True
-            index += 1
+            start += 1
         if not swapped:
             break
     return aList

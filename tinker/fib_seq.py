@@ -2,7 +2,7 @@
 
 def fib(n, evaluated):
     """Return the value of fibonacci sequence at position n"""
-    #0, 1, 2, 3
+    #0, 1, 1, 2, 3, 5
     if n == 0 or n == 1:
         return n
     elif n in evaluated:
