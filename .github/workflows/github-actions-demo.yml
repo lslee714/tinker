@@ -4,14 +4,16 @@ on:
     branches:
       - rebase_all
 env:
+    ROOT_BRANCH_NAME: main
     BRANCHES_TO_REBASE: gh-actions-test, testa, testb
 
 jobs:
   Rebase-All:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
+      - run: echo "Fetching latest..."
+      - run: git fetch origin
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
