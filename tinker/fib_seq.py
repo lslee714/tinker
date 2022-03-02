@@ -15,10 +15,3 @@ def fib(n, evaluated):
         evaluated[twoPositionsBefore] = twoBefore
         evaluated[onePositionBefore] = oneBefore
         return twoBefore + oneBefore
-#
-# def fib(n):
-#     """Return the fib value at position n"""
-#     if n in {1,2}:
-#         return n
-#     else:
-#         return fib(n-2) + fib(n-1)
