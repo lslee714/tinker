@@ -24,6 +24,7 @@ class Solution:
 
 
 test_case = [[1,2,3],[4,5,6],[7,8,9]]
+
 exp_result =  [[7,4,1],[8,5,2],[9,6,3]]
 res = Solution().rotate(test_case)
 
