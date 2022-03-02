@@ -14,12 +14,8 @@ jobs:
       - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
       - run: echo "Fetching latest..."
       - run: git fetch origin
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "Beginning rebase..."
+      - run: |
+          for branch in "$BRANCHES_TO_REBASE"; do
+            echo "Branch name: $branch"
+          done
