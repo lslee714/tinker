@@ -1,7 +1,13 @@
-name: GitHub Actions Demo
-on: [push]
+name: Rebase Branches
+on:
+  push:
+    branches:
+      - rebase_all
+env:
+    BRANCHES_TO_REBASE: gh-actions-test, testa, testb
+
 jobs:
-  Explore-GitHub-Actions:
+  Rebase-All:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
