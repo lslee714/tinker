@@ -15,3 +15,4 @@ def fib(n, evaluated):
         evaluated[twoPositionsBefore] = twoBefore
         evaluated[onePositionBefore] = oneBefore
         return twoBefore + oneBefore
+
