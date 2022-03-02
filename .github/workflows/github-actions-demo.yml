@@ -19,6 +19,6 @@ jobs:
       - run: echo "Beginning rebase..."
       - run: |
           IFS=","
-          for branch in "$BRANCHES_TO_REBASE"; do
+          for branch in $BRANCHES_TO_REBASE; do
             echo "Branch name: $branch"
           done
