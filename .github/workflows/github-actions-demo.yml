@@ -13,7 +13,7 @@ jobs:
     steps:
       - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
       - run: echo "Fetching latest..."
-      - run: git fetch origin
+      - run: git fetch
       - run: echo "Beginning rebase..."
       - run: |
           for branch in "$BRANCHES_TO_REBASE"; do
