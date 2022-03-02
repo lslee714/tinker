@@ -20,5 +20,5 @@ jobs:
       - run: |
           IFS=","
           for branch in $BRANCHES_TO_REBASE; do
-            echo "Branch name: $branch"
+            git rebase origin/$ROOT_BRANCH_NAME $branch
           done
