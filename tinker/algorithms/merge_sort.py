@@ -16,6 +16,7 @@ def compare(left, right):
     result.extend(right[r_idx:])
     return result
 
+
 def merge_sort(to_sort):
 
     if len(to_sort) <= 1:
