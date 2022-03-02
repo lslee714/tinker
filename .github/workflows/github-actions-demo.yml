@@ -4,7 +4,7 @@ on:
     branches:
       - rebase_all
 env:
-    ROOT_BRANCH_NAME: main
+    ROOT_BRANCH_NAME: master
     BRANCHES_TO_REBASE: gh-actions-test,testa,testb
 
 jobs:
