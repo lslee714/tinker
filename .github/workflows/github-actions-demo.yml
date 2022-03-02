@@ -5,7 +5,7 @@ on:
       - rebase_all
 env:
     ROOT_BRANCH_NAME: main
-    BRANCHES_TO_REBASE: gh-actions-test, testa, testb
+    BRANCHES_TO_REBASE: gh-actions-test,testa,testb
 
 jobs:
   Rebase-All:
@@ -14,13 +14,11 @@ jobs:
       - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - run: echo "Fetching latest..."
-      - run: git fetch
+      - run: git fetch origin
       - run: echo "Beginning rebase..."
       - run: |
+          IFS=",
           for branch in "$BRANCHES_TO_REBASE"; do
             echo "Branch name: $branch"
           done
