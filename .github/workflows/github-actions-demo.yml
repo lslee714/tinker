@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
-      - name: Check out repository code
+      - name: Checking out repository code into workspace...
         uses: actions/checkout@v2
       - run: echo "Fetching latest..."
       - run: git fetch origin
