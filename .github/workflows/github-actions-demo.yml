@@ -18,6 +18,7 @@ jobs:
           git config user.email github-actions@github.com
       - run: echo "Fetching latest..."
       - run: git fetch origin
+      - run: git checkout ${{ env.ROOT_BRANCH_NAME }}
       - run: echo "Beginning rebase..."
       - run: |
           IFS=","
