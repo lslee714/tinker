@@ -22,5 +22,6 @@ jobs:
             if [$? -ne 0]
             then
               git rebase --abort
+            fi
             git rebase origin/$ROOT_BRANCH_NAME origin/$branch
           done
