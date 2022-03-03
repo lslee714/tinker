@@ -20,5 +20,8 @@ jobs:
       - run: |
           IFS=","
           for branch in $BRANCHES_TO_REBASE; do
+            if [$? -ne 0]
+            then
+              git rebase --abort
             git rebase origin/$ROOT_BRANCH_NAME origin/$branch
           done
