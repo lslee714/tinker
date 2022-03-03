@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
       - name: Checking out repository code into workspace...
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
