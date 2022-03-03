@@ -6,7 +6,6 @@ on:
 env:
     ROOT_BRANCH_NAME: master
     BRANCHES_TO_REBASE: gh-actions-test,testa,testb
-
 jobs:
   Rebase-All:
     runs-on: ubuntu-latest
