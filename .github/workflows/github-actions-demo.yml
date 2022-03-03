@@ -19,10 +19,10 @@ jobs:
       - run: echo "Fetching latest..."
       - run: git fetch origin
       - run: git checkout ${{ env.ROOT_BRANCH_NAME }}
-      - run: git pull
+      - run: git pull --rebase
       - run: echo "Beginning rebase...."
       - run: |
           IFS=","
           for branch in $BRANCHES_TO_REBASE; do
-            { git checkout $branch  && git pull && git rebase $ROOT_BRANCH_NAME && git push && echo "Rebase SUCCEEDED for branch $branch" ;} || { echo "Rebase FAILED for branch $branch" && git rebase --abort ; }
+            { git checkout $branch  && git pull && git rebase $ROOT_BRANCH_NAME && git push --force-with-lease && echo "Rebase SUCCEEDED for branch $branch" ;} || { echo "Rebase FAILED for branch $branch" && git rebase --abort ; }
           done
