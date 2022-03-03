@@ -19,10 +19,5 @@ jobs:
       - run: |
           IFS=","
           for branch in $BRANCHES_TO_REBASE; do
-            git rebase origin/$ROOT_BRANCH_NAME origin/$branch
-            if [$? -ne 0]
-            then
-              echo "Rebase FAILED for branch $branch"
-              git rebase --abort
-            fi
+            git rebase origin/$ROOT_BRANCH_NAME origin/$branch || echo "Rebase FAILED for branch $branch" && git rebase --abort
           done
