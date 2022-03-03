@@ -10,7 +10,7 @@ jobs:
   Rebase-All:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Rebasing branches $BRANCHES_TO_REBASE with $ROOT_BRANCH_NAME"
+      - run: echo "Rebasing branches ${{ env.BRANCHES_TO_REBASE }} with ${{ env.ROOT_BRANCH_NAME }}"
       - name: Checking out repository code into workspace...
         uses: actions/checkout@v3
       - run: |
