@@ -17,6 +17,7 @@ jobs:
       - run: git fetch origin
       - run: echo "Beginning rebase..."
       - run: |
+          
           IFS=","
           for branch in $BRANCHES_TO_REBASE; do
             git rebase origin/$ROOT_BRANCH_NAME origin/$branch
