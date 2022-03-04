@@ -25,7 +25,7 @@ jobs:
           for branch in $BRANCHES_TO_REBASE; do
             git checkout $branch
             git pull
-            git merge $ROOT_BRANCH_NAME --no edit || { git add -u . && git commit --no-edit ;}
+            git merge $ROOT_BRANCH_NAME --no-edit || { git add -u . && git commit --no-edit ;}
             git push
             echo "Merge SUCCEEDED for branch $branch"
           done
