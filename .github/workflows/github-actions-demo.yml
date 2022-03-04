@@ -30,3 +30,4 @@ jobs:
               && git commit --no-edit \
               && git push \
               && echo "Merge SUCCEEDED for branch $branch" ; }
+          done
