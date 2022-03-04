@@ -30,6 +30,5 @@ jobs:
               ; git add -u . \
               && git commit --no-edit \
               && git push \
-              && echo "Merge SUCCEEDED for branch $branch" ; } \
-            || { echo "Rebase FAILED for branch $branch" && git rebase --abort ; }
+              && echo "Merge SUCCEEDED for branch $branch" ; } || { echo "Rebase FAILED for branch $branch" ;}
           done
