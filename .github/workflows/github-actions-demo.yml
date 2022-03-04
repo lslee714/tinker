@@ -30,4 +30,3 @@ jobs:
             git push
             echo "Merge SUCCEEDED for branch $branch"
           done
-          
