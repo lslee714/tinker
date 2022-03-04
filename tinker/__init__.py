@@ -1,6 +1,1 @@
-<<<<<<< HEAD
-
-
-=======
-print("im master addition")
->>>>>>> master
+print("im testa addition")
