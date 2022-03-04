@@ -13,7 +13,8 @@ jobs:
       - run: echo "Merging  branches ${{ env.BRANCHES_TO_REBASE }} with ${{ env.ROOT_BRANCH_NAME }}"
       - name: Checking out repository code into workspace...
         uses: actions/checkout@v3
-      - run: |
+      - name: Begin merge process...
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo "Fetching latest..."
