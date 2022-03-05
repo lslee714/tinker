@@ -5,7 +5,7 @@ on:
       - force_merge
 env:
     ROOT_BRANCH_NAME: master
-    BRANCH_NG: master,force_merge
+    BRANCH_NG: HEAD,master,force_merge
 jobs:
   Rebase-All:
     runs-on: ubuntu-latest
@@ -21,9 +21,9 @@ jobs:
           git fetch origin
           git checkout ${{ env.ROOT_BRANCH_NAME }}
           echo "Beginning merge...."
-          for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
+          for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/origin/); do
             echo "BRANCH $branch"
-            if [grep -q "$branch" <<< "${{ env.BRANCH_NG }}"]
+            if grep -q "origin/$branch" <<< "${{ env.BRANCH_NG }}"
             then
               echo "SKIPPING $branch"
             else
