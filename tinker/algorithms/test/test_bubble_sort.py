@@ -16,3 +16,9 @@ class test_bubble_sort(TestCase):
         result = bubble_sort(testCase)
         expected = [1,2,3,4,5]
         self.assertEqual(result, expected)
+
+    def test_another_scenario(self):
+        test_case = [1,3,2,1,5,4,32, 3, 1, 8]
+        expected = sorted(test_case)
+        result = bubble_sort(test_case)
+        self.assertEqual(result, expected)
