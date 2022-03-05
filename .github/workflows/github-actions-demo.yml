@@ -20,7 +20,6 @@ jobs:
           echo "Fetching latest..."
           git fetch origin
           git checkout ${{ env.ROOT_BRANCH_NAME }}
-          git pull
           echo "Beginning merge...."
           for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
             echo "BRANCH $branch"
@@ -28,6 +27,7 @@ jobs:
             then
               echo "SKIPPING $branch"
             else
+            echo "Working on branch $branch"
               git checkout $branch
               git pull
               git merge ${{ env.ROOT_BRANCH_NAME }} --no-edit || { git add -u . && git commit --no-edit ;}
