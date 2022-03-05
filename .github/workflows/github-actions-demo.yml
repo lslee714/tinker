@@ -5,7 +5,7 @@ on:
       - force_merge
 env:
     ROOT_BRANCH_NAME: master
-    BRANCH_NG: testa,force_merge
+    BRANCH_NG: master,force_merge
 jobs:
   Rebase-All:
     runs-on: ubuntu-latest
