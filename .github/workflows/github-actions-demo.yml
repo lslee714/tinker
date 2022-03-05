@@ -20,7 +20,7 @@ jobs:
           echo "Fetching latest..."
           git fetch origin
           git checkout ${{ env.ROOT_BRANCH_NAME }}
-          git pull
+          git pull --allow-unrelated-histories
           echo "Beginning merge...."
           for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
             if [[ $branch_NG == *"$branch"* ]]; then
@@ -28,7 +28,7 @@ jobs:
               continue
             fi
             git checkout $branch
-            git pull
+            git pull --allow-unrelated-histories
             git merge $ROOT_BRANCH_NAME --no-edit || { git add -u . && git commit --no-edit ;}
             git push
             echo "Merge SUCCEEDED for branch $branch"
